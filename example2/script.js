@@ -1,11 +1,8 @@
 window.onload = function() {
 
     let container;
-
     let camera, scene, renderer;
-
     let mouseX = 0, mouseY = 0;
-
     let windowHalfX = window.innerWidth / 2;
     let windowHalfY = window.innerHeight / 2;
 
@@ -50,7 +47,7 @@ window.onload = function() {
         // that describes surface shading (material) properties of objects within one or more .OBJ files.
         new THREE.MTLLoader()
             .setPath('assets/')
-            .load('logo3.mtl', function (materials) {
+            .load('END.mtl', function (materials) {
 
                 materials.preload();
 
@@ -60,9 +57,10 @@ window.onload = function() {
                 new THREE.OBJLoader()
                     .setMaterials( materials )
                     .setPath('assets/')
-                    .load('logo3.obj', function (object) {
+                    .load('END.obj', function (object) {
 
-                        object.position.y = - 30;
+                        object.position.x = 0;
+                        object.position.y = 0;
                         object.rotateX(-Math.PI / 2);
                         // object.traverse( function ( child ) {
                         //     if ( child instanceof THREE.Mesh ) {

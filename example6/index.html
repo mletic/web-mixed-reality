@@ -6,15 +6,18 @@
     <meta name="description" content="Hello, WebVR! • A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
   </head>
   <body>
     <a-scene background="color: #000" embedded arjs>
         <a-assets>
-            <a-asset-item id="your-obj" src="assets/logo3.obj"></a-asset-item>
-            <a-asset-item id="your-mtl" src="assets/logo3.mtl"></a-asset-item>
+            <a-asset-item id="your-obj" src="assets/END.obj"></a-asset-item>
+            <a-asset-item id="your-mtl" src="assets/END.mtl"></a-asset-item>
         </a-assets>
         <a-marker preset="hiro">
-            <a-entity obj-model="obj: #your-obj; mtl: #your-mtl" position="0 0 0" scale="0.01 0.01 0.01" rotation="180 0 0" ></a-entity>
+            <a-entity obj-model="obj: #your-obj; mtl: #your-mtl" position="0 0 0" scale="0.01 0.01 0.01" rotation="0 0 0" ></a-entity>
         </a-marker>
         <a-entity>
             <a-camera></a-camera>
