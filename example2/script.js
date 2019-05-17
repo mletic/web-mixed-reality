@@ -15,7 +15,7 @@ window.onload = function() {
         document.body.appendChild(container);
 
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-        camera.position.z = 600;
+        camera.position.z = 400;
 
         // Create a three.js scene
         // Used to add lights, camera, objects
@@ -46,8 +46,8 @@ window.onload = function() {
         // The Material Template Library format (MTL) or .MTL File Format is a companion file format to .OBJ 
         // that describes surface shading (material) properties of objects within one or more .OBJ files.
         new THREE.MTLLoader()
-            .setPath('assets/')
-            .load('END.mtl', function (materials) {
+            .setPath('assets/model/')
+            .load('Coding serbia logo.mtl', function (materials) {
 
                 materials.preload();
 
@@ -56,12 +56,12 @@ window.onload = function() {
                 // the UV position of each texture coordinate vertex, vertex normals, and the faces that make each polygon defined as a list of vertices, and texture vertices.
                 new THREE.OBJLoader()
                     .setMaterials( materials )
-                    .setPath('assets/')
-                    .load('END.obj', function (object) {
+                    .setPath('assets/model/')
+                    .load('Coding serbia logo.obj', function (object) {
 
                         object.position.x = 0;
                         object.position.y = 0;
-                        object.rotateX(-Math.PI / 2);
+                        //object.rotateX(-Math.PI / 2);
                         // object.traverse( function ( child ) {
                         //     if ( child instanceof THREE.Mesh ) {
                         //         child.material[0].color.setRGB (255, 255, 255);

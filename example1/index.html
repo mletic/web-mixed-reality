@@ -18,13 +18,23 @@
             document.body.appendChild( renderer.domElement );
 
             let geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+            //let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+            const loader = new THREE.TextureLoader();
+            const material = [
+                new THREE.MeshBasicMaterial({map: loader.load('assets/coding-serbia-net.jpg')}),
+                new THREE.MeshBasicMaterial({map: loader.load('assets/coding-serbia-net.jpg')}),
+                new THREE.MeshBasicMaterial({map: loader.load('assets/coding-serbia-net.jpg')}),
+                new THREE.MeshBasicMaterial({map: loader.load('assets/coding-serbia-net.jpg')}),
+                new THREE.MeshBasicMaterial({map: loader.load('assets/coding-serbia-net.jpg')}),
+                new THREE.MeshBasicMaterial({map: loader.load('assets/coding-serbia-net.jpg')}),
+            ];
             let cube = new THREE.Mesh( geometry, material );
             scene.add( cube );
 
             camera.position.z = 5;
 
             let animate = function () {
+                /*tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint. The method takes a callback as an argument to be invoked before the repaint.*/
                 requestAnimationFrame( animate );
 
                 cube.rotation.x += 0.01;
